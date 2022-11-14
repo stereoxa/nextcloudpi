@@ -21,6 +21,7 @@ done
 
 ncc config:system:set trusted_domains 1  --value="${local_ip}"
 ncc config:system:set trusted_domains 14 --value="$(hostname -f)"
+ncc config:system:set trusted_domains 25 --value="remote.bugz.ch"
 
 # we might need to retry if redis is not ready
 while :; do

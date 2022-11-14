@@ -48,8 +48,8 @@ EOF
 <VirtualHost _default_:443>
   DocumentRoot /var/www/ncp-web/
   SSLEngine on
-  SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
-  SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+  SSLCertificateFile      /etc/cert/fullchain.pem
+  SSLCertificateKeyFile /etc/cert/privkey.pem
 
 </VirtualHost>
 <Directory /var/www/ncp-web/>
@@ -74,8 +74,8 @@ Listen 4443
 <VirtualHost _default_:4443>
   DocumentRoot /var/www/ncp-web
   SSLEngine on
-  SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
-  SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+  SSLCertificateFile      /etc/cert/fullchain.pem
+  SSLCertificateKeyFile /etc/cert/privkey.pem
   <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains"
   </IfModule>
