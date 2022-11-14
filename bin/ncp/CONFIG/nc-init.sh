@@ -99,6 +99,7 @@ EOF
   sed -i "s|^;\?upload_tmp_dir =.*$|upload_tmp_dir = $UPLOADTMPDIR|" /etc/php/${PHPVER}/cli/php.ini
   sed -i "s|^;\?upload_tmp_dir =.*$|upload_tmp_dir = $UPLOADTMPDIR|" /etc/php/${PHPVER}/fpm/php.ini
   sed -i "s|^;\?sys_temp_dir =.*$|sys_temp_dir = $UPLOADTMPDIR|"     /etc/php/${PHPVER}/fpm/php.ini
+  sed -i "s|^;\?memory_limit =.*$|sys_temp_dir = 512M|"     /etc/php/${PHPVER}/fpm/php.ini
 
   # 4 Byte UTF8 support
   ncc config:system:set mysql.utf8mb4 --type boolean --value="true"
@@ -106,7 +107,7 @@ EOF
   ncc config:system:set trusted_domains 7 --value="nextcloudpi"
   ncc config:system:set trusted_domains 5 --value="nextcloudpi.local"
   ncc config:system:set trusted_domains 8 --value="nextcloudpi.lan"
-  ncc config:system:set trusted_domains 3 --value="nextcloudpi.lan"
+  ncc config:system:set trusted_domains 3 --value="remote.bugz.ch"
 
   # email
   ncc config:system:set mail_smtpmode     --value="sendmail"
