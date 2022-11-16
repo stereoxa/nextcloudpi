@@ -34,7 +34,7 @@ function launch_nc_passwd()
         setTimeout( function(){ 
           $('#loading-gif').hide();
           $('#error-box').fill( "ACTIVATION SUCCESSFUL" ); 
-          var url = window.location.protocol + '//' + window.location.hostname + ':4443';
+          var url = window.location.protocol + '//' + window.location.hostname + ':'+window.location.port;
           if ( !window.open( url, '_blank' ) ) // try to open in a new tab first
             window.location.replace( url );
         }, 4000 );
