@@ -53,19 +53,8 @@ EOF
 
 </VirtualHost>
 <Directory /var/www/ncp-web/>
-  <RequireAll>
-
-   <RequireAny>
-      Require host localhost
-      Require local
-      Require ip 192.168
-      Require ip 172
-      Require ip 10
-      Require ip fe80::/10
-      Require ip fd00::/8
-   </RequireAny>
-
-  </RequireAll>
+ AllowOverride All
+ Require all granted
 </Directory>
 EOF
 
